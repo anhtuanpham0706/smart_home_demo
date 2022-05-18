@@ -3,8 +3,11 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:smart_home_demo/reusable_widgets/reusable_widget.dart';
 import 'package:smart_home_demo/screens/home_screen.dart';
+import 'package:smart_home_demo/screens/otp/input_phone_screen.dart';
+import 'package:smart_home_demo/screens/otp/otp_screen.dart';
 import 'package:smart_home_demo/screens/reset_password.dart';
 import 'package:smart_home_demo/screens/signup_screen.dart';
+import 'package:smart_home_demo/screens/test_screen.dart';
 import 'package:smart_home_demo/utils/color_utils.dart';
 
 class SignInScreen extends StatefulWidget {
@@ -57,7 +60,7 @@ class _SignInScreenState extends State<SignInScreen> {
                           password: _passwordTextController.text)
                       .then((value) {
                     Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => HomeScreen()));
+                        MaterialPageRoute(builder: (context) => TestFirebaseScreen()));
                   });
                 }),
                 signUpOption()
@@ -78,7 +81,7 @@ class _SignInScreenState extends State<SignInScreen> {
         GestureDetector(
           onTap: () {
             Navigator.push(context,
-                MaterialPageRoute(builder: (context) => SignUpScreen()));
+                MaterialPageRoute(builder: (context) => InputPhoneScreen()));
           },
           child: const Text(
             " Sign Up",
